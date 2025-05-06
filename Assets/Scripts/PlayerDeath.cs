@@ -41,10 +41,6 @@ public class PlayerDeath : MonoBehaviour
         RaycastHit2D hitLeft = Physics2D.Raycast(leftOrigin, Vector2.left, sideRayLength, groundLayer);
         RaycastHit2D hitRight = Physics2D.Raycast(rightOrigin, Vector2.right, sideRayLength, groundLayer);
 
-        if (hitLeft.collider != null || hitRight.collider != null)
-        {
-            Die("Choque lateral con el suelo");
-        }
 
         Debug.DrawRay(leftOrigin, Vector2.left * sideRayLength, Color.red);
         Debug.DrawRay(rightOrigin, Vector2.right * sideRayLength, Color.red);
@@ -60,7 +56,7 @@ public class PlayerDeath : MonoBehaviour
         // Parar al personaje
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
-        rb.bodyType = RigidbodyType2D.Static; // Opcional: evita cualquier movimiento posterior
+        rb.bodyType = RigidbodyType2D.Static;
 
         // Reiniciar escena tras un segundo
         Invoke(nameof(ReloadScene), 1f);
