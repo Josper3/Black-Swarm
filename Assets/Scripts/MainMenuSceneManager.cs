@@ -10,7 +10,7 @@ public class MainMenuManager : MonoBehaviour
         if (mainMenuTheme != null)
         GameManager.Instance.audioManager.PlayMusic(mainMenuTheme);
     }
-    public void StartGame() {
+    public void SelecLevel() {
         GameManager.Instance.GoToNextLevel(0f);
     }
 
