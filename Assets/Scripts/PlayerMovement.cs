@@ -6,12 +6,13 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     public float jumpForce = 10f;
     public LayerMask groundLayer; // Capa de suelo
+    public Transform groundCheck;
 
     private Rigidbody2D _body;
     private BoxCollider2D _box;
 
     private bool isGrounded;
-    private float groundCheckDistance = 0.2f; // Distancia de comprobación hacia el suelo
+    private float groundCheckDistance = 0.05f; // Distancia de comprobación hacia el suelo
 
     private void Start()
     {
@@ -21,14 +22,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        // Utiliza un Raycast para verificar si el personaje está tocando el suelo
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
         if (hit.collider != null)
         {
             Debug.Log("Raycast grounded con: " + hit.collider.gameObject.name);
             return true;
         }
-        return hit.collider != null; // Si el Raycast toca algo que esté en la capa de suelo, retorna true
+        return false;
     }
 
     private void Update()
