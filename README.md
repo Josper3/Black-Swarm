@@ -1,5 +1,3 @@
-# Black_Swarm
- 
 # Black_Swarm: Desarrollo de Videojuegos 2D 
 
 Este repositorio es la implementación del proyecto de la asignatura, un videojuego de plataformeo. 
