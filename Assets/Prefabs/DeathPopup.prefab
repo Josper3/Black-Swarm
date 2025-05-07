@@ -330,9 +330,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5126594401296817571}
+      - m_Target: {fileID: 4217988254027539893}
         m_TargetAssemblyTypeName: DeathPopup, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -905,9 +905,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EndLevelPopup, Assembly-CSharp
-        m_MethodName: OnMainMenu
+      - m_Target: {fileID: 4217988254027539893}
+        m_TargetAssemblyTypeName: DeathPopup, Assembly-CSharp
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1038,9 +1038,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EndLevelPopup, Assembly-CSharp
-        m_MethodName: OnLevelSelect
+      - m_Target: {fileID: 4217988254027539893}
+        m_TargetAssemblyTypeName: DeathPopup, Assembly-CSharp
+        m_MethodName: GoToLevelSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
