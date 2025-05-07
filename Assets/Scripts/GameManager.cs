@@ -9,7 +9,7 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] private Sprite[] escena;
     const int TUTORIAL_INDEX = 3;   // Índice donde tienes la escena Tutorial
-    const int FIRST_LEVEL_INDEX = 2;
+    const int SELECT_LEVEL_INDEX = 2; //Índice para saber cual es la seleccion de nivel
     const int TOTAL_LEVELS            = 3;   // Tutorial + Nivel 1 + Nivel 2
     
     public float interLevelWaitTime = 3f;
@@ -40,7 +40,6 @@ public class GameManager : Singleton<GameManager>
             StartCoroutine(WaitAndLoadNextScene(waitTime));
         }
     }
-
 
     private IEnumerator WaitAndLoadNextScene(float waitSeconds) 
     {
@@ -94,5 +93,9 @@ public class GameManager : Singleton<GameManager>
 
     public void ToMenu(){
         SceneManager.LoadScene(1);
+    }
+
+    public void GoToSelecLevel(){
+            SceneManager.LoadScene(SELECT_LEVEL_INDEX);
     }
 }

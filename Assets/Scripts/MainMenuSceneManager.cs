@@ -11,15 +11,15 @@ public class MainMenuManager : MonoBehaviour
         GameManager.Instance.audioManager.PlayMusic(mainMenuTheme);
     }
     public void SelecLevel() {
-        GameManager.Instance.GoToNextLevel(0f);
-    }
-
-    public void Quit() {
-        GameManager.Instance.Quit();
+        GameManager.Instance.GoToSelecLevel();
     }
 
     public void StartCreditos(){
         //int num_niveles = GameManager.Instance.GetNumberOfLevels();
         GameManager.Instance.LoadCredits();
+    }
+
+    public void Quit() {
+        GameManager.Instance.Quit();
     }
 }
