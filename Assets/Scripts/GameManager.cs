@@ -8,6 +8,13 @@ public class GameManager : Singleton<GameManager>
     public AudioManager audioManager;
 
     [SerializeField] private Sprite[] escena;
+    const int TUTORIAL_INDEX = 3;   // Índice donde tienes la escena Tutorial
+    const int FIRST_LEVEL_INDEX = 2;
+    const int TOTAL_LEVELS            = 3;   // Tutorial + Nivel 1 + Nivel 2
+    
+    public float interLevelWaitTime = 3f;
+    const int CREDITOS_INDEX = 6;
+
 
     public override void Awake() 
     {
@@ -17,7 +24,11 @@ public class GameManager : Singleton<GameManager>
             //Debug.Log("GameManager está en escena");
 
     }
-    public float interLevelWaitTime = 3f;
+
+    public int CurrentLevel { get; private set; }   // 0‑based (0 = primer nivel)
+
+    public int GetNumberOfLevels() => TOTAL_LEVELS;
+
 
     public void GoToNextLevel(float waitTime = -1) 
     {
@@ -53,26 +64,32 @@ public class GameManager : Singleton<GameManager>
         #endif
     }
 
+    public void LoadLevel(int levelIndex)
+    {
+        CurrentLevel = levelIndex;                                     // guarda cuál es
+        int buildIndex = TUTORIAL_INDEX + levelIndex;         // traduce a índice de escena
+        SceneManager.LoadScene(buildIndex);
+    }
+
+/*
 
     public int GetNumberOfLevels(){
         // There are two scenes that are not levels: Splash and MainMenu
         return SceneManager.sceneCountInBuildSettings - 2;
     }
-    const int FIRST_LEVEL_INDEX = 2;
-    const int CREDITOS_INDEX = 3;
 
 
     public void LoadLevel(int levelIndex) {
         SceneManager.LoadScene(FIRST_LEVEL_INDEX + levelIndex);
     }
-
-    public void LoadCredits(){
-        SceneManager.LoadScene(CREDITOS_INDEX);
-    }
-
+*/
     public void ComeBack(){
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex-1);
+    }
+
+    public void LoadCredits(){
+        SceneManager.LoadScene(CREDITOS_INDEX);
     }
 
     public void ToMenu(){

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Creditos : MonoBehaviour
 {
- public AudioClip mainMenuTheme;
+ public AudioClip creidtsTheme;
     private void Start() 
     {
-        if (mainMenuTheme != null)
-        GameManager.Instance.audioManager.PlayMusic(mainMenuTheme);
+        if (creidtsTheme != null)
+        GameManager.Instance.audioManager.PlayMusic(creidtsTheme);
     }
 
     public void VolverAtrás(){
