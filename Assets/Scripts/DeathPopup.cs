@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class DeathPopup : MonoBehaviour
 {
-    // SINGLETON muy simple para acceder desde cualquier script
     public static DeathPopup Instance { get; private set; }
 
     [Header("Monedas (3 imágenes)")]
@@ -12,14 +11,29 @@ public class DeathPopup : MonoBehaviour
     public Sprite fullCoin;         // moneda llena
     public Sprite emptyCoin;        // moneda vacía
 
-    void Awake() => Instance = this;
+    void Awake()
+    {
+        // Singleton
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
 
-    /// <summary>Activa la ventana y muestra las monedas conseguidas (0‑3).</summary>
+        // 1) Asegura que arranque oculto
+        gameObject.SetActive(false);
+
+        // 2) Asegura que el TimeScale esté en 1
+        Time.timeScale = 1f;
+    }
+
+    /// <summary>Activa la ventana y muestra las monedas conseguidas (0-3).</summary>
     public void Show(int coinsCollected)
     {
         // Cambiamos sprites según las monedas conseguidas
         for (int i = 0; i < coinImages.Length; i++)
-            coinImages[i].sprite = i < coinsCollected ? fullCoin : emptyCoin;
+            coinImages[i].sprite = (i < coinsCollected) ? fullCoin : emptyCoin;
 
         gameObject.SetActive(true);   // se ve el panel
         Time.timeScale = 0f;          // pausa todo el juego

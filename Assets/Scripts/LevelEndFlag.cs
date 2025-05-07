@@ -1,16 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelEndFlag : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Verifica si el objeto que entra es el jugador (puedes usar una tag)
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("°Nivel completado!");
-            GameManager.Instance.GoToNextLevel(); // Llama al GameManager para cambiar de nivel
-        }
+        if (!other.CompareTag("Player")) return;
+
+        // 1) Obtiene cu√°ntas monedas ha recogido el jugador
+        int coins = other.GetComponent<PlayerInventory>()?.CoinsThisRun ?? 0;
+
+        // 2) Muestra el popup (mismo que al morir)
+        DeathPopup.Instance.Show(coins);
+
+        // 3) Desactiva la bandera para que no entre en bucle
+        GetComponent<Collider2D>().enabled = false;
     }
 }

@@ -1,22 +1,21 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
     public LayerMask obstacleLayer;
     public LayerMask groundLayer;
 
-    private Rigidbody2D rb;
-    private BoxCollider2D col;
-    private bool isDead = false;
+    Rigidbody2D rb;
+    BoxCollider2D col;
+    bool isDead = false;
 
-    private void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
     }
 
-    private void Update()
+    void Update()
     {
         if (isDead) return;
 
@@ -24,46 +23,43 @@ public class PlayerDeath : MonoBehaviour
         CheckSideGroundCollision();
     }
 
+    // ================== COLISIONES ==================
     void CheckObstacleCollision()
     {
         if (col.IsTouchingLayers(obstacleLayer))
-        {
-            Die("TocÛ un obst·culo");
-        }
+            Die("Toc√≥ un obst√°culo");
     }
 
     void CheckSideGroundCollision()
     {
         float sideRayLength = 0.1f;
-        Vector2 leftOrigin = (Vector2)transform.position + Vector2.left * col.bounds.extents.x;
+        Vector2 leftOrigin  = (Vector2)transform.position + Vector2.left  * col.bounds.extents.x;
         Vector2 rightOrigin = (Vector2)transform.position + Vector2.right * col.bounds.extents.x;
 
-        RaycastHit2D hitLeft = Physics2D.Raycast(leftOrigin, Vector2.left, sideRayLength, groundLayer);
-        RaycastHit2D hitRight = Physics2D.Raycast(rightOrigin, Vector2.right, sideRayLength, groundLayer);
+        Physics2D.Raycast(leftOrigin,  Vector2.left,  sideRayLength, groundLayer);
+        Physics2D.Raycast(rightOrigin, Vector2.right, sideRayLength, groundLayer);
 
-
-        Debug.DrawRay(leftOrigin, Vector2.left * sideRayLength, Color.red);
+#if UNITY_EDITOR
+        Debug.DrawRay(leftOrigin,  Vector2.left  * sideRayLength, Color.red);
         Debug.DrawRay(rightOrigin, Vector2.right * sideRayLength, Color.red);
+#endif
     }
 
+    // ================== MUERTE ==================
     void Die(string reason)
     {
         if (isDead) return;
-
         isDead = true;
+
         Debug.Log("Player muerto: " + reason);
 
-        // Parar al personaje
-        rb.velocity = Vector2.zero;
+        // Detener Rigidbody
+        rb.velocity        = Vector2.zero;
         rb.angularVelocity = 0f;
-        rb.bodyType = RigidbodyType2D.Static;
+        rb.bodyType        = RigidbodyType2D.Static;
 
-        // Reiniciar escena tras un segundo
-        Invoke(nameof(ReloadScene), 1f);
-    }
-
-    void ReloadScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // --- NUEVO: mostrar el popup ---
+        int coinsCollected = GetComponent<PlayerInventory>()?.CoinsThisRun ?? 0;
+        DeathPopup.Instance.Show(coinsCollected);
     }
 }

@@ -27,14 +27,14 @@ RectTransform:
   m_GameObject: {fileID: 828642515768116856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0955, y: 1.0955, z: 1.0955}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9171852835217260894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37, y: 246}
+  m_AnchoredPosition: {x: 13.251, y: 193.17}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4350765448888959277
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Has Muerto
+  m_text: Monedas recogidas
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1a2def7cae527d48bd34247b7cbe6aa, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: c1a2def7cae527d48bd34247b7cbe6aa, type: 2}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -92.61658, y: 0, z: -91.828125, w: 0}
+  m_margin: {x: -174.98532, y: 0, z: -175.94934, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -169,7 +169,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7208433412608785726
 CanvasRenderer:
@@ -201,7 +201,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: d84f3f458aee91648b08d72eaa8bfa73, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -237,7 +237,7 @@ RectTransform:
   m_GameObject: {fileID: 2688623695934621924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1732, y: 1.1732, z: 1.1732}
+  m_LocalScale: {x: 1.2852407, y: 1.2852407, z: 1.2852407}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6115332457186932159}
@@ -245,7 +245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -167, y: -7}
+  m_AnchoredPosition: {x: -210.22, y: -83.982}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &192170903456097394
@@ -330,9 +330,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2625799704633554835}
+      - m_Target: {fileID: 5126594401296817571}
         m_TargetAssemblyTypeName: DeathPopup, Assembly-CSharp
-        m_MethodName: Retry
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -511,7 +511,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4562969008202388632
 CanvasRenderer:
@@ -543,7 +543,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: d84f3f458aee91648b08d72eaa8bfa73, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 9171852835217260894}
   - component: {fileID: 8256142683801329011}
   - component: {fileID: 1344152066431123989}
-  - component: {fileID: 2625799704633554835}
+  - component: {fileID: 4217988254027539893}
   m_Layer: 5
   m_Name: DeathPopup
   m_TagString: Untagged
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3569da6241c38504da5cc38e8435d15a, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2625799704633554835
+--- !u!114 &4217988254027539893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5126594401296817571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07f7e5455a55bf84cbe0b0cacaaf5225, type: 3}
+  m_Script: {fileID: 11500000, guid: 88606340aa2b86d43821e050ec615544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   coinImages:
@@ -812,7 +812,7 @@ RectTransform:
   m_GameObject: {fileID: 6889796147909032230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.145, y: 1.145, z: 1.145}
+  m_LocalScale: {x: 1.2543474, y: 1.2543474, z: 1.2543474}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7698535331472674780}
@@ -820,7 +820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238, y: -7}
+  m_AnchoredPosition: {x: 233.44, y: -83.982}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5115858321190669881
@@ -905,9 +905,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2625799704633554835}
-        m_TargetAssemblyTypeName: DeathPopup, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: EndLevelPopup, Assembly-CSharp
+        m_MethodName: OnMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -945,7 +945,7 @@ RectTransform:
   m_GameObject: {fileID: 8137279780466243204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2015, y: 1.2015, z: 1.2015}
+  m_LocalScale: {x: 1.3162433, y: 1.3162433, z: 1.3162433}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7873534017425939783}
@@ -953,7 +953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37, y: -7}
+  m_AnchoredPosition: {x: 13.251, y: -83.982}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2531772095266498360
@@ -1038,9 +1038,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2625799704633554835}
-        m_TargetAssemblyTypeName: DeathPopup, Assembly-CSharp
-        m_MethodName: GoToLevelSelect
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: EndLevelPopup, Assembly-CSharp
+        m_MethodName: OnLevelSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1085,7 +1085,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6110801865977970200
 CanvasRenderer:
@@ -1117,7 +1117,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: d84f3f458aee91648b08d72eaa8bfa73, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1285,7 +1285,7 @@ RectTransform:
   m_GameObject: {fileID: 9157384223014947123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.734369, y: 0.9431228, z: 0.8026577}
+  m_LocalScale: {x: 5.186501, y: 4.9749184, z: 0.8793115}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 691844388106318476}
@@ -1295,7 +1295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31, y: 129}
+  m_AnchoredPosition: {x: 6.6781006, y: 65}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7046116814284329970
@@ -1319,8 +1319,8 @@ MonoBehaviour:
   m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
